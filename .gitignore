@@ -1,0 +1,47 @@
+﻿# Secrets réels
+secrets.h
+**/secrets.h
+.env
+*.key
+
+# PlatformIO
+.pio/
+**/.pio/
+
+# Python
+__pycache__/
+**/__pycache__/
+*.pyc
+
+# Node-RED local
+flows_cred.json
+**/flows_cred.json
+
+# Windows et éditeurs
+Thumbs.db
+.DS_Store
+.vscode/
+
+# Secrets du projet
+src/secrets.h
+**/secrets.h
+.env
+*.key
+
+# PlatformIO
+.pio/
+**/.pio/
+
+# Python
+__pycache__/
+**/__pycache__/
+*.pyc
+
+# Node-RED local
+flows_cred.json
+**/flows_cred.json
+
+# Editeurs et Windows
+.vscode/
+Thumbs.db
+.DS_Store

@@ -1,0 +1,41 @@
+RÉSUMÉ DE L'ANALYSE PRÉDICTIVE
+=============================================
+
+Nombre de mesures valides : 3304
+Période analysée : 2026-11-02 18:32:18 à 2026-11-04 17:46:39
+
+RÉPARTITION DES ÉTATS
+- Mesures normales : 3088 (93.5 %)
+- Mesures en attention : 127 (3.8 %)
+- Mesures critiques : 89 (2.7 %)
+
+TEMPÉRATURE
+- Minimum : 18.60 °C
+- Maximum : 80.00 °C
+- Moyenne : 35.09 °C
+- Tendances croissantes détectées : 150
+- Anomalies adaptatives détectées : 20
+
+VIBRATIONS
+- Minimum : 1.97 mm/s
+- Maximum : 10.00 mm/s
+- Moyenne : 3.02 mm/s
+- Tendances croissantes détectées : 76
+- Anomalies adaptatives détectées : 10
+
+RISQUE MAXIMAL
+- Score maximal : 80.0/100
+- Date du risque maximal : 2026-11-02 19:10:39
+- Température correspondante : 80.00 °C
+- Vibration correspondante : 2.93 mm/s
+- Niveau : RISQUE_CRITIQUE
+- Recommandation : Arrêter le moteur et effectuer une inspection immédiate
+
+ÉTAT FINAL DE L'HISTORIQUE
+- Température finale : 32.00 °C
+- Vibration finale : 2.85 mm/s
+- Niveau prédictif : RISQUE_FAIBLE
+- Recommandation : Fonctionnement stable
+
+INTERPRÉTATION
+Une hausse progressive détectée avant le dépassement des seuils représente un signe précoce de dégradation. Les seuils fixes déclenchent l'alerte lorsque le danger est déjà présent, tandis que la moyenne mobile et la pente permettent une détection anticipée.

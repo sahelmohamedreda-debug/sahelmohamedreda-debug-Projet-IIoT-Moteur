@@ -1,0 +1,1040 @@
+[
+    {
+        "id": "99522873b017cfd6",
+        "type": "tab",
+        "label": "Supervision Moteur IIoT",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "428d1e93ae394e13",
+        "type": "mqtt in",
+        "z": "99522873b017cfd6",
+        "name": "MQTT Température",
+        "topic": "tdi/moteur/mr01/temperature",
+        "qos": "0",
+        "datatype": "auto-detect",
+        "broker": "3e8473044d044353",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 210,
+        "y": 380,
+        "wires": [
+            [
+                "69f813a9ad343a38",
+                "7dbd676840101aaa",
+                "2496803e5b527031"
+            ]
+        ]
+    },
+    {
+        "id": "69f813a9ad343a38",
+        "type": "ui_gauge",
+        "z": "99522873b017cfd6",
+        "name": "Gauge Température",
+        "group": "6b8cf8a282e7c629",
+        "order": 1,
+        "width": 6,
+        "height": 4,
+        "gtype": "gage",
+        "title": "Température moteur",
+        "label": "°C",
+        "format": "{{value}}",
+        "min": 0,
+        "max": "100",
+        "colors": [
+            "#2e7d32",
+            "#ff9800",
+            "#c62828"
+        ],
+        "seg1": "65",
+        "seg2": "79.99",
+        "diff": false,
+        "className": "",
+        "x": 500,
+        "y": 360,
+        "wires": []
+    },
+    {
+        "id": "7dbd676840101aaa",
+        "type": "ui_chart",
+        "z": "99522873b017cfd6",
+        "name": "Chart Température",
+        "group": "ac19679d0571256d",
+        "order": 1,
+        "width": 12,
+        "height": 5,
+        "label": "Évolution de la température",
+        "chartType": "line",
+        "legend": "false",
+        "xformat": "HH:mm:ss",
+        "interpolate": "linear",
+        "nodata": "En attente des données de température...",
+        "dot": false,
+        "ymin": "0",
+        "ymax": "100",
+        "removeOlder": "5",
+        "removeOlderPoints": "",
+        "removeOlderUnit": "60",
+        "cutout": 0,
+        "useOneColor": false,
+        "useUTC": false,
+        "colors": [
+            "#1f77b4",
+            "#aec7e8",
+            "#ff7f0e",
+            "#2ca02c",
+            "#98df8a",
+            "#e65100",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "outputs": 1,
+        "useDifferentColor": false,
+        "className": "",
+        "x": 490,
+        "y": 440,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "d7dbe4c3ff53fb26",
+        "type": "mqtt in",
+        "z": "99522873b017cfd6",
+        "name": "MQTT Vibration",
+        "topic": "tdi/moteur/mr01/vibration",
+        "qos": "0",
+        "datatype": "auto-detect",
+        "broker": "3e8473044d044353",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 200,
+        "y": 560,
+        "wires": [
+            [
+                "40d60bfcf019d281",
+                "8d9d802c1834e2fa",
+                "0186199f516a5030"
+            ]
+        ]
+    },
+    {
+        "id": "40d60bfcf019d281",
+        "type": "ui_gauge",
+        "z": "99522873b017cfd6",
+        "name": "Gauge Vibration",
+        "group": "6b8cf8a282e7c629",
+        "order": 2,
+        "width": 6,
+        "height": 4,
+        "gtype": "gage",
+        "title": "Vibration moteur",
+        "label": " mm/s",
+        "format": "{{value}}",
+        "min": 0,
+        "max": 10,
+        "colors": [
+            "#2e7d32",
+            "#ff9800",
+            "#c62828"
+        ],
+        "seg1": "4",
+        "seg2": "7",
+        "diff": false,
+        "className": "",
+        "x": 480,
+        "y": 520,
+        "wires": []
+    },
+    {
+        "id": "8d9d802c1834e2fa",
+        "type": "ui_chart",
+        "z": "99522873b017cfd6",
+        "name": "Chart Vibration",
+        "group": "ac19679d0571256d",
+        "order": 2,
+        "width": 12,
+        "height": 5,
+        "label": "Évolution des vibrations",
+        "chartType": "line",
+        "legend": "false",
+        "xformat": "HH:mm:ss",
+        "interpolate": "linear",
+        "nodata": "En attente des données de vibration...",
+        "dot": false,
+        "ymin": "0",
+        "ymax": "10",
+        "removeOlder": "5",
+        "removeOlderPoints": "",
+        "removeOlderUnit": "60",
+        "cutout": 0,
+        "useOneColor": false,
+        "useUTC": false,
+        "colors": [
+            "#1565c0",
+            "#aec7e8",
+            "#ff7f0e",
+            "#2ca02c",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "outputs": 1,
+        "useDifferentColor": false,
+        "className": "",
+        "x": 500,
+        "y": 580,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "07ed4327bb99915e",
+        "type": "mqtt in",
+        "z": "99522873b017cfd6",
+        "name": "MQTT État moteur",
+        "topic": "tdi/moteur/mr01/etat",
+        "qos": "1",
+        "datatype": "auto-detect",
+        "broker": "3e8473044d044353",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 750,
+        "y": 440,
+        "wires": [
+            [
+                "26241ff266539c0a",
+                "49e184efe99c8b6c"
+            ]
+        ]
+    },
+    {
+        "id": "26241ff266539c0a",
+        "type": "ui_text",
+        "z": "99522873b017cfd6",
+        "group": "6b8cf8a282e7c629",
+        "order": 3,
+        "width": 6,
+        "height": 1,
+        "name": "Texte État moteur",
+        "label": "État de santé",
+        "format": "{{msg.payload}}",
+        "layout": "row-spread",
+        "className": "",
+        "style": false,
+        "font": "",
+        "fontSize": 16,
+        "color": "#000000",
+        "x": 1030,
+        "y": 380,
+        "wires": []
+    },
+    {
+        "id": "a03c75b9af678554",
+        "type": "mqtt in",
+        "z": "99522873b017cfd6",
+        "name": "MQTT Alerte",
+        "topic": "tdi/moteur/mr01/alerte",
+        "qos": "1",
+        "datatype": "auto-detect",
+        "broker": "3e8473044d044353",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 170,
+        "y": 180,
+        "wires": [
+            [
+                "1b3516495aaa2047",
+                "456496b9656572df",
+                "f10c36b863b3ebdb",
+                "f22d703be8195f0f"
+            ]
+        ]
+    },
+    {
+        "id": "1b3516495aaa2047",
+        "type": "ui_text",
+        "z": "99522873b017cfd6",
+        "group": "1fc486467d646aa1",
+        "order": 2,
+        "width": 12,
+        "height": 1,
+        "name": "Texte Alerte",
+        "label": "Alerte actuelle",
+        "format": "{{msg.payload}}",
+        "layout": "row-spread",
+        "className": "",
+        "style": false,
+        "font": "",
+        "fontSize": 16,
+        "color": "#000000",
+        "x": 310,
+        "y": 120,
+        "wires": []
+    },
+    {
+        "id": "442c368a84f10e61",
+        "type": "ui_button",
+        "z": "99522873b017cfd6",
+        "name": "Bouton MARCHE",
+        "group": "1fc486467d646aa1",
+        "order": 4,
+        "width": 6,
+        "height": 1,
+        "passthru": false,
+        "label": "MARCHE",
+        "tooltip": "Démarrer le moteur",
+        "color": "#FFFFFF",
+        "bgcolor": "#2E7D32",
+        "className": "",
+        "icon": "play_arrow",
+        "payload": "MARCHE",
+        "payloadType": "str",
+        "topic": "tdi/moteur/mr01/commande",
+        "topicType": "str",
+        "x": 750,
+        "y": 540,
+        "wires": [
+            [
+                "b5fdc53254b0cb8f"
+            ]
+        ]
+    },
+    {
+        "id": "1e0c007dfc4f51fa",
+        "type": "ui_button",
+        "z": "99522873b017cfd6",
+        "name": "Bouton ARRÊT",
+        "group": "1fc486467d646aa1",
+        "order": 5,
+        "width": 6,
+        "height": 1,
+        "passthru": false,
+        "label": "ARRÊT",
+        "tooltip": "Arrêter le moteur",
+        "color": "#FFFFFF",
+        "bgcolor": "#C62828",
+        "className": "",
+        "icon": "stop",
+        "payload": "ARRET",
+        "payloadType": "str",
+        "topic": "tdi/moteur/mr01/commande",
+        "topicType": "str",
+        "x": 760,
+        "y": 640,
+        "wires": [
+            [
+                "b5fdc53254b0cb8f"
+            ]
+        ]
+    },
+    {
+        "id": "b5fdc53254b0cb8f",
+        "type": "mqtt out",
+        "z": "99522873b017cfd6",
+        "name": "MQTT Commande moteur",
+        "topic": "tdi/moteur/mr01/commande",
+        "qos": "1",
+        "retain": "false",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "3e8473044d044353",
+        "x": 1030,
+        "y": 600,
+        "wires": []
+    },
+    {
+        "id": "2496803e5b527031",
+        "type": "function",
+        "z": "99522873b017cfd6",
+        "name": "Mémoriser température",
+        "func": "flow.set(\n    \"temperature\",\n    String(msg.payload).trim()\n);\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 490,
+        "y": 300,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "0186199f516a5030",
+        "type": "function",
+        "z": "99522873b017cfd6",
+        "name": "Mémoriser vibration",
+        "func": "flow.set(\n    \"vibration\",\n    String(msg.payload).trim()\n);\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 490,
+        "y": 640,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "49e184efe99c8b6c",
+        "type": "function",
+        "z": "99522873b017cfd6",
+        "name": "Mémoriser état",
+        "func": "flow.set(\n    \"etat\",\n    String(msg.payload).trim()\n);\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1020,
+        "y": 480,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "456496b9656572df",
+        "type": "function",
+        "z": "99522873b017cfd6",
+        "name": "Mémoriser alerte",
+        "func": "flow.set(\"alerte\", String(msg.payload));\nreturn null;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 330,
+        "y": 240,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "afe646b1eadcd7cb",
+        "type": "inject",
+        "z": "99522873b017cfd6",
+        "name": " Enregistrement toutes les 5 secondes",
+        "props": [
+            {
+                "p": "payload"
+            }
+        ],
+        "repeat": "5",
+        "crontab": "",
+        "once": true,
+        "onceDelay": "1",
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 290,
+        "y": 740,
+        "wires": [
+            [
+                "26ee8089e92e7db9"
+            ]
+        ]
+    },
+    {
+        "id": "26ee8089e92e7db9",
+        "type": "function",
+        "z": "99522873b017cfd6",
+        "name": "Construire ligne CSV",
+        "func": "const temperature = flow.get(\"temperature\");\nconst vibration = flow.get(\"vibration\");\nconst etat = flow.get(\"etat\");\nconst fonctionnement = flow.get(\"fonctionnement\");\nconst alerte = flow.get(\"alerte\");\n\n// Affichage temporaire pour identifier une donnée manquante\nif (temperature === undefined) {\n    node.status({\n        fill: \"red\",\n        shape: \"ring\",\n        text: \"temperature manquante\"\n    });\n    return null;\n}\n\nif (vibration === undefined) {\n    node.status({\n        fill: \"red\",\n        shape: \"ring\",\n        text: \"vibration manquante\"\n    });\n    return null;\n}\n\nif (etat === undefined) {\n    node.status({\n        fill: \"red\",\n        shape: \"ring\",\n        text: \"etat manquant\"\n    });\n    return null;\n}\n\nif (fonctionnement === undefined) {\n    node.status({\n        fill: \"red\",\n        shape: \"ring\",\n        text: \"fonctionnement manquant\"\n    });\n    return null;\n}\n\nif (alerte === undefined) {\n    node.status({\n        fill: \"red\",\n        shape: \"ring\",\n        text: \"alerte manquante\"\n    });\n    return null;\n}\n\nconst maintenant = new Date();\n\nmsg.payload = {\n    date: maintenant.toLocaleDateString(\"fr-FR\"),\n    heure: maintenant.toLocaleTimeString(\"fr-FR\"),\n    temperature: Number(temperature),\n    vibration: Number(vibration),\n    etat: String(etat),\n    fonctionnement: String(fonctionnement),\n    alerte: String(alerte)\n};\n\nnode.status({\n    fill: \"green\",\n    shape: \"dot\",\n    text: \"ligne construite\"\n});\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 580,
+        "y": 740,
+        "wires": [
+            [
+                "c9e7f2e87d4be65a",
+                "3b2c1bc79033088d"
+            ]
+        ]
+    },
+    {
+        "id": "c9e7f2e87d4be65a",
+        "type": "debug",
+        "z": "99522873b017cfd6",
+        "name": "Vérifier ligne CSV",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 830,
+        "y": 740,
+        "wires": []
+    },
+    {
+        "id": "3b2c1bc79033088d",
+        "type": "csv",
+        "z": "99522873b017cfd6",
+        "name": "Convertir en CSV",
+        "spec": "rfc",
+        "sep": ";",
+        "hdrin": "",
+        "hdrout": "none",
+        "multi": "one",
+        "ret": "\\r\\n",
+        "temp": "date,heure,temperature,vibration,etat,fonctionnement,alerte",
+        "skip": "0",
+        "strings": true,
+        "include_empty_strings": "",
+        "include_null_values": "",
+        "x": 790,
+        "y": 800,
+        "wires": [
+            [
+                "4ce722de0a242835"
+            ]
+        ]
+    },
+    {
+        "id": "4ce722de0a242835",
+        "type": "file",
+        "z": "99522873b017cfd6",
+        "name": "Enregistrer mesures.csv",
+        "filename": "C:\\Users\\PCPACK\\OneDrive\\Pictures\\Documents\\PlatformIO\\Projects\\Projet_IIoT_Moteur\\data\\mesures.csv",
+        "filenameType": "str",
+        "appendNewline": false,
+        "createDir": true,
+        "overwriteFile": "false",
+        "encoding": "utf8",
+        "x": 1010,
+        "y": 800,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "f10c36b863b3ebdb",
+        "type": "rbe",
+        "z": "99522873b017cfd6",
+        "name": "Ignorer les alertes identiques",
+        "func": "rbe",
+        "gap": "",
+        "start": "",
+        "inout": "out",
+        "septopics": true,
+        "property": "payload",
+        "topi": "topic",
+        "x": 400,
+        "y": 200,
+        "wires": [
+            [
+                "62b5ad5227d5c21b"
+            ]
+        ]
+    },
+    {
+        "id": "62b5ad5227d5c21b",
+        "type": "switch",
+        "z": "99522873b017cfd6",
+        "name": "Filtrer les alertes",
+        "property": "payload",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "neq",
+                "v": "AUCUNE_ALERTE",
+                "vt": "str"
+            }
+        ],
+        "checkall": "false",
+        "repair": false,
+        "outputs": 1,
+        "x": 700,
+        "y": 200,
+        "wires": [
+            [
+                "1af31f8381691ff0"
+            ]
+        ]
+    },
+    {
+        "id": "f22d703be8195f0f",
+        "type": "function",
+        "z": "99522873b017cfd6",
+        "name": "Afficher alerte en couleur",
+        "func": "const alerte = String(msg.payload).trim();\n\nif (alerte === \"ANOMALIE_CRITIQUE\") {\n    msg.payload = {\n        texte: \"ANOMALIE CRITIQUE\",\n        couleur: \"#d32f2f\",\n        couleurTexte: \"#ffffff\"\n    };\n\n    node.status({\n        fill: \"red\",\n        shape: \"dot\",\n        text: \"ANOMALIE CRITIQUE\"\n    });\n}\nelse if (alerte === \"AVERTISSEMENT\") {\n    msg.payload = {\n        texte: \"AVERTISSEMENT\",\n        couleur: \"#ff9800\",\n        couleurTexte: \"#000000\"\n    };\n\n    node.status({\n        fill: \"yellow\",\n        shape: \"dot\",\n        text: \"AVERTISSEMENT\"\n    });\n}\nelse {\n    msg.payload = {\n        texte: \"AUCUNE ALERTE\",\n        couleur: \"#2e7d32\",\n        couleurTexte: \"#ffffff\"\n    };\n\n    node.status({\n        fill: \"green\",\n        shape: \"dot\",\n        text: \"AUCUNE ALERTE\"\n    });\n}\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 670,
+        "y": 120,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "e9829ac01f826d45",
+        "type": "inject",
+        "z": "99522873b017cfd6",
+        "name": "Initialiser alertes.csv",
+        "props": [
+            {
+                "p": "payload"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "date;heure;type_alerte;temperature;vibration;etat;fonctionnement",
+        "payloadType": "str",
+        "x": 1010,
+        "y": 120,
+        "wires": [
+            [
+                "9f263b56be4cf9d9"
+            ]
+        ]
+    },
+    {
+        "id": "fbd3535c8067af94",
+        "type": "mqtt in",
+        "z": "99522873b017cfd6",
+        "name": "MQTT Fonctionnement",
+        "topic": "tdi/moteur/mr01/fonctionnement",
+        "qos": "1",
+        "datatype": "auto-detect",
+        "broker": "3e8473044d044353",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 220,
+        "y": 840,
+        "wires": [
+            [
+                "468b03a4a32fd9ad",
+                "2581c4ee00149acb",
+                "2d12461320e1c4af"
+            ]
+        ]
+    },
+    {
+        "id": "468b03a4a32fd9ad",
+        "type": "ui_text",
+        "z": "99522873b017cfd6",
+        "group": "6b8cf8a282e7c629",
+        "order": 4,
+        "width": 6,
+        "height": 1,
+        "name": "Texte Fonctionnement",
+        "label": "Fonctionnement ",
+        "format": "{{msg.payload}}",
+        "layout": "row-spread",
+        "className": "",
+        "style": false,
+        "font": "",
+        "fontSize": 16,
+        "color": "#000000",
+        "x": 480,
+        "y": 800,
+        "wires": []
+    },
+    {
+        "id": "2581c4ee00149acb",
+        "type": "function",
+        "z": "99522873b017cfd6",
+        "name": "Mémoriser fonctionnement",
+        "func": "flow.set(\"fonctionnement\", String(msg.payload).trim());\nreturn null;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 520,
+        "y": 840,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "2d12461320e1c4af",
+        "type": "debug",
+        "z": "99522873b017cfd6",
+        "name": "Debug Fonctionnement",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 510,
+        "y": 900,
+        "wires": []
+    },
+    {
+        "id": "1273e43709bb8b7b",
+        "type": "mqtt in",
+        "z": "99522873b017cfd6",
+        "name": "MQTT Disponibilité",
+        "topic": "tdi/moteur/mr01/disponibilite",
+        "qos": "1",
+        "datatype": "auto-detect",
+        "broker": "3e8473044d044353",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 250,
+        "y": 980,
+        "wires": [
+            [
+                "0f79f0b735496353",
+                "121270fc66643629"
+            ]
+        ]
+    },
+    {
+        "id": "0f79f0b735496353",
+        "type": "ui_text",
+        "z": "99522873b017cfd6",
+        "group": "6b8cf8a282e7c629",
+        "order": 5,
+        "width": 12,
+        "height": 1,
+        "name": "Texte Disponibilité",
+        "label": "Connexion ESP32",
+        "format": "{{msg.payload}}",
+        "layout": "row-spread",
+        "className": "",
+        "style": false,
+        "font": "",
+        "fontSize": 16,
+        "color": "#000000",
+        "x": 490,
+        "y": 960,
+        "wires": []
+    },
+    {
+        "id": "121270fc66643629",
+        "type": "debug",
+        "z": "99522873b017cfd6",
+        "name": "Vérifier disponibilité",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 490,
+        "y": 1020,
+        "wires": []
+    },
+    {
+        "id": "d57705f2e436ab51",
+        "type": "mqtt in",
+        "z": "99522873b017cfd6",
+        "name": "MQTT ACK Commande",
+        "topic": "tdi/moteur/mr01/commande/ack",
+        "qos": "0",
+        "datatype": "utf8",
+        "broker": "3e8473044d044353",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 780,
+        "y": 940,
+        "wires": [
+            [
+                "decdd2afea60b5d1"
+            ]
+        ]
+    },
+    {
+        "id": "decdd2afea60b5d1",
+        "type": "function",
+        "z": "99522873b017cfd6",
+        "name": "Formater ACK Commande",
+        "func": "let ack = msg.payload;\n\nif (typeof ack === \"string\") {\n    try {\n        ack = JSON.parse(ack);\n    } catch (erreur) {\n        node.status({\n            fill: \"red\",\n            shape: \"ring\",\n            text: \"ACK JSON invalide\"\n        });\n\n        return null;\n    }\n}\n\nconst commande = ack.commande || \"INCONNUE\";\nconst resultat = ack.resultat || \"INCONNU\";\nconst raison = ack.raison || \"NON_PRECISEE\";\nconst fonctionnement =\n    ack.fonctionnement || \"INCONNU\";\n\nmsg.ack = ack;\n\nif (resultat === \"ACCEPTEE\") {\n    msg.payload =\n        \"✅ \" + commande\n        + \" acceptée\"\n        + \" • \" + fonctionnement;\n\n    node.status({\n        fill: \"green\",\n        shape: \"dot\",\n        text: commande + \" acceptée\"\n    });\n} else {\n    msg.payload =\n        \"❌ \" + commande\n        + \" refusée\"\n        + \" • \" + raison\n        + \" • \" + fonctionnement;\n\n    node.status({\n        fill: \"red\",\n        shape: \"dot\",\n        text: commande + \" refusée\"\n    });\n}\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1060,
+        "y": 940,
+        "wires": [
+            [
+                "92e7ac411cb7a209",
+                "ed1b71527a336339"
+            ]
+        ]
+    },
+    {
+        "id": "92e7ac411cb7a209",
+        "type": "debug",
+        "z": "99522873b017cfd6",
+        "name": "Debug ACK Commande",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "msg.ack",
+        "targetType": "jsonata",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1330,
+        "y": 880,
+        "wires": []
+    },
+    {
+        "id": "ed1b71527a336339",
+        "type": "ui_text",
+        "z": "99522873b017cfd6",
+        "group": "1fc486467d646aa1",
+        "order": 3,
+        "width": 12,
+        "height": 2,
+        "name": "Texte ACK Commande",
+        "label": "",
+        "format": "{{msg.payload}}",
+        "layout": "row-spread",
+        "className": "",
+        "style": false,
+        "font": "",
+        "fontSize": 16,
+        "color": "#000000",
+        "x": 1320,
+        "y": 980,
+        "wires": []
+    },
+    {
+        "id": "1af31f8381691ff0",
+        "type": "function",
+        "z": "99522873b017cfd6",
+        "name": "Préparer ligne alertes.csv",
+        "func": "// L'alerte arrive directement depuis le nœud de filtrage.\nconst typeAlerte = String(msg.payload || \"\")\n    .trim()\n    .toUpperCase();\n\n// Enregistrer uniquement les alertes utiles.\nif (\n    typeAlerte !== \"AVERTISSEMENT\"\n    && typeAlerte !== \"ANOMALIE_CRITIQUE\"\n    && typeAlerte !== \"DONNEE_INVALIDE\"\n) {\n    node.status({\n        fill: \"grey\",\n        shape: \"ring\",\n        text: \"alerte ignorée : \" + typeAlerte\n    });\n\n    return null;\n}\n\n// Date et heure locales.\nconst maintenant = new Date();\n\nconst date = maintenant.toLocaleDateString(\n    \"fr-FR\",\n    {\n        day: \"2-digit\",\n        month: \"2-digit\",\n        year: \"numeric\"\n    }\n);\n\nconst heure = maintenant.toLocaleTimeString(\n    \"fr-FR\",\n    {\n        hour: \"2-digit\",\n        minute: \"2-digit\",\n        second: \"2-digit\",\n        hour12: false\n    }\n);\n\n// Dernières valeurs reçues et mémorisées.\nconst temperature =\n    flow.get(\"temperature\") ?? \"\";\n\nconst vibration =\n    flow.get(\"vibration\") ?? \"\";\n\nconst etat =\n    flow.get(\"etat\") ?? \"\";\n\n// Construction directe d'une ligne CSV.\nmsg.payload =\n    date + \";\"\n    + heure + \";\"\n    + typeAlerte + \";\"\n    + temperature + \";\"\n    + vibration + \";\"\n    + etat\n    + \"\\n\";\n\nnode.status({\n    fill: \"green\",\n    shape: \"dot\",\n    text: \"ligne CSV prête\"\n});\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 930,
+        "y": 200,
+        "wires": [
+            [
+                "153ba0028ed6dd53",
+                "9f263b56be4cf9d9"
+            ]
+        ]
+    },
+    {
+        "id": "153ba0028ed6dd53",
+        "type": "debug",
+        "z": "99522873b017cfd6",
+        "name": "Debug ligne CSV",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1210,
+        "y": 240,
+        "wires": []
+    },
+    {
+        "id": "9f263b56be4cf9d9",
+        "type": "file",
+        "z": "99522873b017cfd6",
+        "name": "Enregistrer alertes.csv",
+        "filename": "C:\\Users\\PCPACK\\OneDrive\\Pictures\\Documents\\PlatformIO\\Projects\\Projet_IIoT_Moteur\\data\\alertes.csv",
+        "filenameType": "str",
+        "appendNewline": false,
+        "createDir": true,
+        "overwriteFile": "false",
+        "encoding": "utf8",
+        "x": 1280,
+        "y": 180,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "dfc12d8e54afeac0",
+        "type": "inject",
+        "z": "99522873b017cfd6",
+        "name": "Test direct alertes.csv",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "07/11/2026;16:40:00;TEST_ALERTE;65;2.93;ATTENTION",
+        "payloadType": "str",
+        "x": 1280,
+        "y": 100,
+        "wires": [
+            [
+                "9f263b56be4cf9d9"
+            ]
+        ]
+    },
+    {
+        "id": "51bf5d7b228ef6d0",
+        "type": "ui_spacer",
+        "z": "99522873b017cfd6",
+        "name": "spacer",
+        "group": "1fc486467d646aa1",
+        "order": 1,
+        "width": 12,
+        "height": 1
+    },
+    {
+        "id": "3e8473044d044353",
+        "type": "mqtt-broker",
+        "name": "EMQX Cloud Sécurisé",
+        "broker": "v2c163d8.ala.us-east-1.emqxsl.com",
+        "port": "8883",
+        "tls": "fd120e77d8b4a3e6",
+        "clientid": "nodered-supervision",
+        "autoConnect": true,
+        "usetls": true,
+        "protocolVersion": 4,
+        "keepalive": 60,
+        "cleansession": true,
+        "autoUnsubscribe": true,
+        "birthTopic": "",
+        "birthQos": "0",
+        "birthRetain": "false",
+        "birthPayload": "",
+        "birthMsg": {},
+        "closeTopic": "",
+        "closeQos": "0",
+        "closeRetain": "false",
+        "closePayload": "",
+        "closeMsg": {},
+        "willTopic": "",
+        "willQos": "0",
+        "willRetain": "false",
+        "willPayload": "",
+        "willMsg": {},
+        "userProps": "",
+        "sessionExpiry": ""
+    },
+    {
+        "id": "6b8cf8a282e7c629",
+        "type": "ui_group",
+        "name": "Vue générale",
+        "tab": "fb0f6965da584326",
+        "order": 2,
+        "disp": true,
+        "width": "12",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "ac19679d0571256d",
+        "type": "ui_group",
+        "name": "Tendances",
+        "tab": "fb0f6965da584326",
+        "order": 2,
+        "disp": true,
+        "width": "12",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "1fc486467d646aa1",
+        "type": "ui_group",
+        "name": "Alertes et commandes",
+        "tab": "fb0f6965da584326",
+        "order": 3,
+        "disp": true,
+        "width": "12",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "fd120e77d8b4a3e6",
+        "type": "tls-config",
+        "name": "TLS EMQX Cloud",
+        "certType": "files",
+        "cert": "",
+        "key": "",
+        "p12": "",
+        "p12name": "",
+        "ca": "",
+        "certname": "",
+        "keyname": "",
+        "caname": "emqx-ca.crt",
+        "servername": "",
+        "verifyservercert": true,
+        "alpnprotocol": "",
+        "certEnv": "",
+        "keyEnv": "",
+        "caEnv": ""
+    },
+    {
+        "id": "fb0f6965da584326",
+        "type": "ui_tab",
+        "name": "Supervision IIoT moteur",
+        "icon": "dashboard",
+        "disabled": false,
+        "hidden": false
+    },
+    {
+        "id": "fbbef0e6820239fc",
+        "type": "global-config",
+        "env": [],
+        "modules": {
+            "node-red-dashboard": "3.6.6"
+        }
+    }
+]

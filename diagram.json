@@ -1,0 +1,66 @@
+{
+  "version": 1,
+  "editor": "wokwi",
+  "parts": [
+    { "type": "board-esp32-devkit-c-v4", "id": "esp1", "top": 307.2, "left": 460.8, "attrs": {} },
+    {
+      "type": "wokwi-dht22",
+      "id": "dht1",
+      "top": 172.8,
+      "left": 748.8,
+      "attrs": { "temperature": "35", "humidity": "45" }
+    },
+    {
+      "type": "wokwi-potentiometer",
+      "id": "pot1",
+      "top": 393.6,
+      "left": 748.8,
+      "attrs": { "value": "300" }
+    },
+    {
+      "type": "wokwi-led",
+      "id": "ledVerte1",
+      "top": 182.4,
+      "left": 240,
+      "attrs": { "color": "green", "label": "NORMAL" }
+    },
+    {
+      "type": "wokwi-resistor",
+      "id": "rVerte1",
+      "top": 259.2,
+      "left": 297.6,
+      "rotate": 90,
+      "attrs": { "value": "220" }
+    },
+    {
+      "type": "wokwi-led",
+      "id": "ledRouge1",
+      "top": 384,
+      "left": 240,
+      "attrs": { "color": "red", "label": "ALARME" }
+    },
+    {
+      "type": "wokwi-resistor",
+      "id": "rRouge1",
+      "top": 460.8,
+      "left": 297.6,
+      "rotate": 90,
+      "attrs": { "value": "220" }
+    }
+  ],
+  "connections": [
+    [ "dht1:VCC", "esp1:3V3", "red", [] ],
+    [ "dht1:SDA", "esp1:15", "green", [] ],
+    [ "dht1:GND", "esp1:GND.1", "black", [] ],
+    [ "pot1:VCC", "esp1:3V3", "red", [] ],
+    [ "pot1:SIG", "esp1:34", "blue", [] ],
+    [ "pot1:GND", "esp1:GND.2", "black", [] ],
+    [ "esp1:2", "rVerte1:1", "green", [] ],
+    [ "rVerte1:2", "ledVerte1:A", "green", [] ],
+    [ "ledVerte1:C", "esp1:GND.1", "black", [] ],
+    [ "esp1:4", "rRouge1:1", "red", [] ],
+    [ "rRouge1:2", "ledRouge1:A", "red", [] ],
+    [ "ledRouge1:C", "esp1:GND.2", "black", [] ]
+  ],
+  "dependencies": {}
+}
